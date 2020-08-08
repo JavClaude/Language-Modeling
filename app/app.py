@@ -11,6 +11,7 @@ from utils.data_utils import predict_sentence
 
 
 app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 tokenizer = Tokenizer.from_file("app/materials/french_pretrained_tokenizer")
 model = LSTMModel(tokenizer.get_vocab_size(), 300, 256)
 model.load_state_dict(torch.load('app/materials/french_pretrained_model.pt'))
@@ -20,7 +21,7 @@ model.load_state_dict(torch.load('app/materials/french_pretrained_model.pt'))
 def run():
     data = request.get_json(force=True)
     data = predict_sentence(model, tokenizer, data['text'], 30, 1, "cpu")
-    return jsonify(data)
+    return jsonify(data, )
 
 if __name__ == "__main__":
     app.run(debug=True)    
