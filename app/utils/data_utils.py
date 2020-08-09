@@ -23,7 +23,7 @@ def next_word_processing(texts_to_ids: List, batch_size: int, seq_length: int):
     target_texts = target_texts.reshape(batch_size, -1)
     texts_to_ids = np.reshape(texts_to_ids, (batch_size, -1))
 
-    return texts, target_texts
+    return texts_to_ids, target_texts
 
 def get_batches(train_texts: np.ndarray, target_texts: np.ndarray, batch_size: int, seq_length: int):
     """Batch Generator
