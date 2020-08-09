@@ -4,7 +4,7 @@ Word Level LSTM Language Modeling
 You will find here :
 
 A Pytorch 2-LSTM Model trained on ~80k financial french news
-Scripts for training the model from scratch
+
 Finally, you can deploy the model via API with Flask
 Have Fun !
 
