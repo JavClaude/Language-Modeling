@@ -1,12 +1,12 @@
 import requests
 
 
-def get_fake_financial_news(n_try: int = 10):
+def get_financial_fake_news(n_try: int = 10):
 
     i = 0
 
     while i < n_try:
-        seed_str = input("Type something about financial content..\n")
+        seed_str = input("Type something with financial content..\n")
 
         if seed_str == "stop":
             break
